@@ -1,6 +1,6 @@
 public class Plank{
-    protected int id_plank;
-    protected Size size;
+    private int id_plank;
+    private Size size;
 
     public Plank initPlank(){
         return new Plank();
@@ -10,20 +10,25 @@ public class Plank{
         return new Plank(id, size);
     }
 
-    protected Plank(){
-        this(0,createSize(0,0));
+    private Plank(){
+        this.id_plank=0;
+        this.size=getplanksize();
     }
 
-    protected Plank(int id, int length, int width){
+    private Plank(int id, Size size){
         setid(id);
-        setsize(createSize(length,width));
+        setsize(size);
     }
 
-    protected void setid(int id){
+    private void setid(int id){
         this.id_plank=id;
     }
 
-    protected void setsize(Size size){
+    private Size getplanksize(){
+        return size.initSize();
+    }
+
+    private void setsize(Size size){
         this.size=size;
     }
 }
