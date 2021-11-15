@@ -9,7 +9,7 @@ class Order {
         this.price= price.createprice();
     }
 
-    public Order(Date date, int number,Prix price){
+    public Order(Date date, int number,Price price){
     this.number=number;
     this.date=date;
     this.price=price;
@@ -19,7 +19,7 @@ class Order {
         return new Order();
     }
     
-    public Order createOrder(Date date, int number,Prix price){
+    public Order createOrder(Date date, int number,Price price){
         return new Order(date,number,price);
     }
 

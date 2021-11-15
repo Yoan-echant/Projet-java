@@ -17,8 +17,7 @@ public class Supplier{
        setid(id_supplier);
     }
 
-    private void setid(int id_supplier){
+    public void setid(int id_supplier){
         this.id_supplier = id_supplier;
     }
-
 }

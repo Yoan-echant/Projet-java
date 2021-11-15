@@ -8,17 +8,17 @@ class Panel{
         this.size.setwidth(0);
     }
 
-    public Panel(int id_panel, Size size){
+    public Panel(int id_panel, int length, int width){
         setid(id_panel);
-        setsize(size);
+        setsize(size.CreateSize(length, width));
     }
 
     public Panel initPanel(){
         return new Panel();
     }
 
-    public Panel createPanel(int id_panel, Size size ){
-        return new Panel(id_panel, size);
+    public Panel createPanel(int id_panel, int length, int width){
+        return new Panel(id_panel, length, width);
     }
 
     private void setid(int id_panel){
