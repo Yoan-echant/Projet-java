@@ -1,5 +1,5 @@
 public class Order {
-private int number;
+public int number;
 public Date date; 
 public Prix prix;
 
