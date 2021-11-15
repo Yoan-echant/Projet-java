@@ -7,7 +7,7 @@ CC= javac
 SHELL = /bin/sh
 
 
-EXECS = Client.class ClientOrder.class Date.java Order.class Panel.class Plank.class Prix.class Size.class Supplier.class SupplierOrder.class
+EXECS = Client.class ClientOrder.class Date.java Order.class Panel.class Plank.class Price.class Size.class Supplier.class SupplierOrder.class
 
 default: $(EXECS)
 

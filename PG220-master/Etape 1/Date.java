@@ -17,9 +17,12 @@ class Date{
         return new Date();
     }
 
-    public Date createdate(int jour,int mois,int année){
+    public Date create_date(int jour,int mois,int année){
         return new Date(jour, mois, année);
     }
 
+    public void setdate(String date){
+        this.date=date;
+    }
 
 }

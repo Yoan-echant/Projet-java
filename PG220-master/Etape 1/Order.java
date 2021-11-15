@@ -1,12 +1,12 @@
 class Order {
     public int number;
-    public Date date; 
-    public Prix price;
+    private Date date; 
+    private Price price;
 
     public Order(){
         this.number=0;
-        this.date= createdate();
-        this.price= createprice();
+        this.date= date.createdate();
+        this.price= price.createprice();
     }
 
     public Order(Date date, int number,Prix price){
@@ -21,6 +21,10 @@ class Order {
     
     public Order createOrder(Date date, int number,Prix price){
         return new Order(date,number,price);
+    }
+
+    public void setnumber(int nb){
+        this.number=nb;
     }
     
 }
