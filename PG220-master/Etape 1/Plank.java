@@ -6,8 +6,8 @@ public class Plank{
         return new Plank();
     }
 
-    public Plank createPlank(int id, Size size){
-        return new Plank(id, size);
+    public Plank createPlank(int id, int length, int width){
+        return new Plank(id, length, width);
     }
 
     private Plank(){
@@ -15,9 +15,9 @@ public class Plank{
         this.size=getplanksize();
     }
 
-    private Plank(int id, Size size){
+    private Plank(int id, int length, int width){
         setid(id);
-        setsize(size);
+        setsize(size.CreateSize(length, width));
     }
 
     private void setid(int id){

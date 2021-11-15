@@ -3,19 +3,22 @@ public class ClientOrder extends Order{
     private Plank plank;
 
 public ClientOrder initClientOrder(){
-    ClientOrder clientorder;
-    clientorder.number=0;
-    clientorder.client=initClient();
-    clientorder.plank=initPlank();
-    return clientorder;
+    return new ClientOrder();
 }
 
-public static ClientOrder createClientOrder(number,id_client,idPlank,length,width){
-    ClientOrder clientorder;
-    clientorder.number=0;
-    clientorder.client=createClient(id_client);
-    clientorder.plank=createPlank(idPlank,createSize(length, width));
-    return clientorder;
+public ClientOrder createClientOrder(int number,int id_client,int idPlank,int length,int width){
+    return new ClientOrder(number, id_client, idPlank, length, width);
 }
 
+private ClientOrder(){
+    this.number=0;
+    this.client=client.initClient();
+    this.plank=plank.initPlank();
+}
+
+private ClientOrder(int number,int id_client,int idPlank,int length,int width){
+    this.number=number;
+    this.client=client.createClient(id_client);
+    this.plank=plank.createPlank(idPlank,length, width);
+}
 }
