@@ -10,7 +10,6 @@ public class TestReadXml {
             if(reader.hasNext()) {
 
                 reader.next(); // On regarde la liste des clients
-
                 reader.nextTag(); //On regarde le premier client
                 reader.nextTag(); //On regarde la première commande de planche demandée
 
