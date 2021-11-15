@@ -19,11 +19,11 @@ public class Size{
         setwidth(width);
     }
 
-    private void setlength(int l){
+    public void setlength(int l){
         this.length=l;
     }
 
-    private void setwidth(int w){
+    public void setwidth(int w){
         this.width=w;
     }
 
