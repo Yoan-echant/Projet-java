@@ -9,10 +9,10 @@ class Price {
         this.price = price;
     }
 
-    public int createprice(){
+    public Price createprice(){
         return new Price();
     }
-    private int createprice(int p){
+    public Price createprice(int p){
         return new Price(p);
 
     }

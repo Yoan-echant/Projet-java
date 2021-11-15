@@ -1,18 +1,16 @@
 class SupplierOrder extends Order{
     private Supplier supplier;
-    private int panel_number;
+    private Panel panel;
 
 
     private SupplierOrder(){
-        this.supplier.initSupplier();
-        this.panel_number = 0;
+        this.supplier=supplier.initSupplier();
     }
 
     private SupplierOrder(Supplier supplier, int panel_number,int id_panel){
         setsupplier(supplier);
-        this.panel_number = panel_number;
-        this.id_panel = id_panel;
-    }
+        this.panel= panel_number;
+        
 
 
     private SupplierOrder initSupplierOrder(){

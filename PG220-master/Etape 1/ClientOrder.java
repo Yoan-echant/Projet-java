@@ -11,13 +11,13 @@ public ClientOrder createClientOrder(int number,int id_client,int idPlank,int le
 }
 
 private ClientOrder(){
-    this.number=0;
     this.client=client.initClient();
     this.plank=plank.initPlank();
+    setnumber(0);
 }
 
 private ClientOrder(int number,int id_client,int idPlank,int length,int width){
-    this.number=number;
+    setnumber(number);
     this.client=client.createClient(id_client);
     this.plank=plank.createPlank(idPlank,length, width);
 }
