@@ -1,19 +1,19 @@
 public class Supplier{
     private int id_supplier;
 
-    private Supplier initSupplier(){
+    public Supplier initSupplier(){
         return new Supplier();
     }
 
-    private Supplier createSupplier(int id_supplier){
+    public Supplier createSupplier(int id_supplier){
         return new Supplier(id_supplier);
     }
 
-    private Supplier(){
+    public Supplier(){
         this(0);
     }
 
-    private Supplier(int id_supplier){
+    public Supplier(int id_supplier){
        setid(id_supplier);
     }
 

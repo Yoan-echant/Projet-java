@@ -1,12 +1,11 @@
 class Date{
-    private String date;
+    public String date;
 
-
-    private Date(){
-        this("01.01.00");
+    public Date(){
+        this.date = "00.00.00";
     }
 
-    private Date(int jour,int mois,int année){
+    public Date(int jour,int mois,int année){
         this.date=date.concat(String.valueOf(jour));
         this.date=date.concat(".");
         this.date=date.concat(String.valueOf(mois));
@@ -14,18 +13,13 @@ class Date{
         this.date=date.concat(String.valueOf(année));
     }
 
-    public String createdate(){
-        // this.date=date.concat("01.01.00");
-        // return this.date;
+    public Date createdate(){
         return new Date();
     }
 
-    private String create_date(int jour,int mois,int année){
+    public Date createdate(int jour,int mois,int année){
         return new Date(jour, mois, année);
     }
 
-    private void setdate(String date){
-        this.date=date;
-    }
 
 }

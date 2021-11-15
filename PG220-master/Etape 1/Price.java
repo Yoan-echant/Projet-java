@@ -1,24 +1,19 @@
 class Price {
     private int price; 
 
-    private Price(){
+    public Price(){
         this(0);
     }
 
-    private Price(int price){
+    public Price(int price){
         this.price = price;
     }
 
-    public int createprice(){
+    public Price createprice(){
         return new Price();
     }
-    private int createprice(int p){
+    public Price createprice(int p){
         return new Price(p);
 
     }
-
-    private int getprice(){
-        return price;
-    }
-
 }
