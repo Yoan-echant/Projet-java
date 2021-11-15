@@ -1,5 +1,5 @@
 public class Client{
-    protected int id_client;
+    private int id_client;
 
 
     public Client initClient(){
@@ -18,7 +18,7 @@ public class Client{
         setid(id);
     }
 
-    protected void setid(int id){
+    private void setid(int id){
         this.id_client=id;
     }
 
