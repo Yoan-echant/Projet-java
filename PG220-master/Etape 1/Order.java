@@ -5,8 +5,8 @@ public Prix prix;
 
 public Order createOrder(){
 this.number=0;
-this.date=new create_date();
-this.prix=new createprice();
+this.date= create_date();
+this.prix= createprice();
 }
 
 public Order createclient(Date date, int number,Prix prix){

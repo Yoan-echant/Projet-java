@@ -1,5 +1,5 @@
 public class Date {
-protected String date;
+private String date;
 
 public String create_date(){
 this.date=date.concat("01.01.00");

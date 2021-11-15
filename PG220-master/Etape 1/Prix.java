@@ -1,5 +1,5 @@
 public class Prix {
-protected int price; 
+private int price; 
 
 public int createprice(){
     this.price=0;
