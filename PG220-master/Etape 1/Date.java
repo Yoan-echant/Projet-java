@@ -1,5 +1,4 @@
-public class Date {
-private String date;
+
 class Date{
     private String date;
 
