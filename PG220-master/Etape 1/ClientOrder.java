@@ -1,6 +1,6 @@
 public class ClientOrder extends Order{
-    protected Client client;
-    protected Plank plank;
+    private Client client;
+    private Plank plank;
 
 public ClientOrder initClientOrder(){
     ClientOrder clientorder;
