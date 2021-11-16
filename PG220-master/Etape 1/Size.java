@@ -1,4 +1,4 @@
-public class Size{
+public class Size implements Validable{
     private int length;
     private int width;
 
@@ -33,5 +33,12 @@ public class Size{
 
     public int getlength(){
         return this.length;
+    }
+
+    public boolean isvalide(){
+        if (this.length <=0 || this.width <=0 || this.length<this.width){
+            return false;
+        }
+        return true;
     }
 }
