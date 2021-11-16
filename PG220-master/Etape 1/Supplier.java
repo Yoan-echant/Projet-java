@@ -20,4 +20,12 @@ public class Supplier{
     public void setid(int id_supplier){
         this.id_supplier = id_supplier;
     }
+
+     public boolean isvalidable(){
+        if(this.id_supplier <0){
+            return false;
+        }
+        return true;
+    }
+    
 }

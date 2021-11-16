@@ -29,5 +29,10 @@ public class Panel{
         this.size = size;
     }
 
-
+    public boolean isvalidable(){
+        if(this.size.getlength()<=0 || this.size.getwidth() <=0){
+            return false;
+        }
+        return true;
+    }
 }

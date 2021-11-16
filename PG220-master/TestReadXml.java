@@ -14,7 +14,7 @@ public class TestReadXml {
             file = new FileInputStream("clients.xml");
             XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
             XMLStreamReader reader = xmlInFact.createXMLStreamReader(file);
-            if(reader.hasNext()) {
+            while(reader.hasNext()) {
 
                 reader.next(); // On regarde la liste des clients
                 reader.nextTag(); //On regarde le premier client
@@ -22,6 +22,9 @@ public class TestReadXml {
 
                 String commande = "Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
                 System.out.println(commande);
+                reader.nextTag();
+                String dimensions = " de longueur " + reader.getAttributeValue(0) + " et de largeur " + reader.getAttributeValue(1);
+                System.out.println(dimensions);
             }
         }
         catch(IOException exc) {
