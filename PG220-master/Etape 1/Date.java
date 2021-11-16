@@ -1,4 +1,4 @@
-public class Date{
+public class Date implements Validable{
     public String date;
 
     public Date(){
@@ -23,6 +23,11 @@ public class Date{
 
     public void setdate(String date){
         this.date=date;
+    }
+
+    public boolean isvalide(){
+
+        return true;
     }
 
 }

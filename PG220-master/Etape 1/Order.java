@@ -1,7 +1,8 @@
-class Order {
+class Order implements Validable{
     public int number;
     private Date date; 
     private Price price;
+    private int type;
 
     public Order(){
         this.number=0;
@@ -27,4 +28,10 @@ class Order {
         this.number=nb;
     }
     
+    public boolean isvalide(){
+        if (number >0){
+            return true;
+        }
+        return false;
+    }
 }
