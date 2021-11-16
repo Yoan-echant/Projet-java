@@ -1,4 +1,4 @@
-class Panel{
+public class Panel{
     private int id_panel;
     private Size size;
 
