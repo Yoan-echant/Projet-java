@@ -1,4 +1,4 @@
-class Date{
+public class Date{
     public String date;
 
     public Date(){

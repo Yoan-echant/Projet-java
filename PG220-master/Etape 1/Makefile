@@ -7,73 +7,76 @@ CC= javac
 SHELL = /bin/sh
 
 
-EXECS = Client.class ClientOrder.class Date.class Order.class Panel.class Plank.class Price.class Size.class Supplier.class SupplierOrder.class clean2
+EXECS = Client.class ClientOrder.class Date.class Order.class Panel.class Plank.class Price.class Size.class Supplier.class SupplierOrder.class mov clean2
 
 default: $(EXECS)
 
 Client.class: Client.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 	
-
+	
 ClientOrder.class: ClientOrder.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 Date.class: Date.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
 Order.class: Order.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
 Panel.class: Panel.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
 Plank.class: Plank.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
 Supplier.class: Supplier.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
 SupplierOrder.class: SupplierOrder.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 
-Prize.class: Price.javaS
+Price.class: Price.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 	
 
 Size.class: Size.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	@-mv $@ ./bin/
+	#!@-mv $@ ./bin/
 
 clean:
 	@-/bin/rm -f *.o *~ PI* $(EXECS) *.out core 
 
 clean2:
 	@-rm -f *.o *~ PI* $(EXECS) *.out core
+
+mov:
+	@-mv $(EXECS) ./bin/
 
 veryclean: clean
 	@-/bin/rm -f ./bin/*
