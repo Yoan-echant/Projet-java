@@ -58,7 +58,7 @@ SupplierOrder.class: SupplierOrder.java
 	@-mv $@ ./bin/
 
 
-Prize.class: Price.javaS
+Price.class: Price.javaS
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
 	@-mv $@ ./bin/
