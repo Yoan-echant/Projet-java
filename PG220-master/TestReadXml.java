@@ -22,6 +22,13 @@ public class TestReadXml {
 
                 String commande = "Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
                 System.out.println(commande);
+                reader.nextTag();
+                String commandebis ="la dimension est de Longueur : "+reader.getAttributeValue(0)+"  et de Largeur" + reader.getAttributeValue(1);
+                System.out.println(commandebis);
+                reader.next();
+                reader.nextTag();
+                String commandetre="Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
+
             }
         }
         catch(IOException exc) {
