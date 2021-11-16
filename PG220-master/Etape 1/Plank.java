@@ -1,4 +1,4 @@
-public class Plank{
+public class Plank implements Validable{
     private int id_plank;
     private Size size;
 
@@ -30,5 +30,12 @@ public class Plank{
 
     private void setsize(Size size){
         this.size=size;
+    }
+
+    public boolean isvalide(){
+        if (this.id_plank <0){
+            return false;
+        }
+        return true;
     }
 }
