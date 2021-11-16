@@ -1,4 +1,4 @@
-public class Client{
+public class Client implements Validable{
     private int id_client;
 
 
@@ -24,5 +24,12 @@ public class Client{
 
     public int getid(){
         return id_client;
+    }
+
+    public boolean isvalide(){
+        if (this.id_client >=0){
+            return true;
+        }
+        return false;
     }
 }
