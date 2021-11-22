@@ -7,9 +7,14 @@ CC= javac
 SHELL = /bin/sh
 
 
-EXECS = Client.class ClientOrder.class Date.class Order.class Panel.class Plank.class Price.class Size.class Supplier.class SupplierOrder.class mov clean2
+EXECS = Validable.class Client.class ClientOrder.class Date.class Order.class Plank.class Price.class Size.class mov clean2
 
 default: $(EXECS)
+
+Validable.class: Validable.java
+	$(CC) $^
+	@-if [ ! -d "bin" ]; then mkdir bin ; fi
+	#!@-mv $@ ./bin/
 
 Client.class: Client.java
 	$(CC) $^
@@ -34,28 +39,14 @@ Order.class: Order.java
 	#!@-mv $@ ./bin/
 
 
-Panel.class: Panel.java
-	$(CC) $^
-	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	#!@-mv $@ ./bin/
-
-
 Plank.class: Plank.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
 	#!@-mv $@ ./bin/
 
 
-Supplier.class: Supplier.java
-	$(CC) $^
-	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	#!@-mv $@ ./bin/
 
 
-SupplierOrder.class: SupplierOrder.java
-	$(CC) $^
-	@-if [ ! -d "bin" ]; then mkdir bin ; fi
-	#!@-mv $@ ./bin/
 
 
 Price.class: Price.java
