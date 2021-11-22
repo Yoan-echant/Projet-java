@@ -1,9 +1,8 @@
 class Order implements Validable{
-    public int number;
+    private int number;
     private Date date; 
     private Price price;
     private int type;
-    private ClientOrder clientorder;  // Pour l'instant clientOrder sera aussi SupplierOrder, penser a renommer plus tard (type=0:client sinon fournisseur)
 
     public Order(){
         this.number=0;
@@ -12,24 +11,35 @@ class Order implements Validable{
         this.type = 0;  // 0 On est un client, sinon un fournisseur
     }
 
-    public Order(Date date, int number,int type, Price price,int id, int product_number,int length, int width){
+    public Order(Date date, int number,int type, Price price){
     this.number=number;
     this.date=date;
     this.price=price;
     this.type=type;
-    this.clientorder=clientorder.createClientOrder(id, product_number, length, width);
     }
 
     public Order createOrder(){
         return new Order();
     }
     
-    public Order createOrder(Date date, int number,int type, Price price,int id, int product_number,int id_panel,int length, int width){
-        return new Order(date, number, type, price,id, product_number, length, width);
+    public Order createOrder(Date date, int number,int type, Price price){
+        return new Order(date, number, type, price);
     }
 
     public void setnumber(int nb){
         this.number=nb;
+    }
+
+    public void setdate(String date_order){
+        date.setdate(date_order);
+    }
+
+    public void settype(int typ){
+        this.type=typ;
+    }
+
+    public void setprice(Double pri){
+        price.setprice(pri);
     }
     
     public boolean isvalide(){

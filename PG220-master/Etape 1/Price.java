@@ -18,6 +18,10 @@ class Price implements Validable{
 
     }
 
+    public void setprice(Double p){
+        this.price=p;
+    }
+
     public boolean isvalide(){
         boolean b=this.price instanceof  Double;
         if( b == false) {
