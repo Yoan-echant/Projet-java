@@ -1,4 +1,4 @@
-class Price {
+class Price implements Validable{
     private double price; 
 
     public Price(){
