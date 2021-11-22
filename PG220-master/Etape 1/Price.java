@@ -17,15 +17,15 @@ class Price implements Validable{
 
     }
 
-    public boolean isvalidable(){
-        boolean b = this.price instanceof double;
-        if( b == false) {
-            return false;
-        }
-        if(this.price*100 - Math.floor(this.price * 100) !=0 ){
-           return false; 
-        }
+    // public boolean isvalidable(){
+    //     boolean b = this.price instanceof double;
+    //     if( b == false) {
+    //         return false;
+    //     }
+    //     if(this.price*100 - Math.floor(this.price * 100) !=0 ){
+    //        return false; 
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 }

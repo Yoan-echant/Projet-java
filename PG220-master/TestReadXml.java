@@ -14,18 +14,20 @@ public class TestReadXml {
             file = new FileInputStream("clients.xml");
             XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
             XMLStreamReader reader = xmlInFact.createXMLStreamReader(file);
-            if(reader.hasNext()) {
+            while(reader.hasNext()) {
 
-                reader.next(); // On regarde la liste des clients
-                reader.nextTag(); //On regarde le premier client
-                reader.nextTag(); //On regarde la première commande de planche demandée
+                if(reader.next()==1 ){
+                    reader.nextTag(); //On regarde le premier client
+                    reader.nextTag(); //On regarde la première commande de planche demandée
 
-                String commande = "Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
-                System.out.println(commande);
-                reader.nextTag();
-                String commandebis ="la dimension est de Longueur : "+reader.getAttributeValue(0)+"  et de Largeur" + reader.getAttributeValue(1);
-                System.out.println(commandebis);
-
+                    String commande = "Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
+                    System.out.println(commande);
+                    reader.nextTag(); //On regarde les dimensions de la commande
+                    String dimension ="La dimension est de longueur "+reader.getAttributeValue(0)+"  et de largeur " + reader.getAttributeValue(1);
+                    System.out.println(dimension);
+                } 
+                else
+                    break;
             }
         }
         catch(IOException exc) {
