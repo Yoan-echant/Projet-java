@@ -10,18 +10,19 @@ class Order implements Validable{
         this.price= price.createprice();
     }
 
-    public Order(Date date, int number,Price price){
+    public Order(Date date, int number,Price price, int type){
     this.number=number;
     this.date=date;
     this.price=price;
+    this.type = type;
     }
 
     public Order createOrder(){
         return new Order();
     }
     
-    public Order createOrder(Date date, int number,Price price){
-        return new Order(date,number,price);
+    public Order createOrder(Date date, int number,Price price, int type){
+        return new Order(date,number,price, type);
     }
 
     public void setnumber(int nb){
