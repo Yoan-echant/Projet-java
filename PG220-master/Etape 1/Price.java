@@ -1,31 +1,36 @@
 class Price implements Validable{
-    private double price; 
+    private Double price; 
+
 
     public Price(){
-        this(0);
+        this.price = new Double(0);
     }
 
-    public Price(double price){
+    public Price(Double price){
         this.price = price;
     }
 
     public Price createprice(){
         return new Price();
     }
-    public Price createprice(double p){
+    public Price createprice(Double p){
         return new Price(p);
 
     }
 
-    // public boolean isvalidable(){
-    //     boolean b = this.price instanceof double;
-    //     if( b == false) {
-    //         return false;
-    //     }
-    //     if(this.price*100 - Math.floor(this.price * 100) !=0 ){
-    //        return false; 
-    //     }
+    public void setprice(Double p){
+        this.price=p;
+    }
 
-    //     return true;
-    // }
+    public boolean isvalide(){
+        boolean b=this.price instanceof  Double;
+        if( b == false) {
+            return false;
+        }
+        if(this.price*100 - Math.floor(this.price * 100) !=0 ){
+           return false; 
+        }   
+
+        return true;
+    }
 }
