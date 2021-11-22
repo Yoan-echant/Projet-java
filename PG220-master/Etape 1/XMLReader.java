@@ -54,8 +54,10 @@ public class XMLReader
         return new Client(id,listPlanche);
     }
 
-    static Planche readPlanche(XMLStreamReader reader) throws XMLStreamException
+    static Plank readPlank(XMLStreamReader reader) throws XMLStreamException
     {
         return null;
     }
+
+    static Size readSize(XMLStreamReader reader) throws XMLStreamException
 }
