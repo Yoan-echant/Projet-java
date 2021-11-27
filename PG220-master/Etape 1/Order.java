@@ -38,8 +38,8 @@ class Order implements Validable{
         this.type=typ;
     }
 
-    public void setprice(Double pri){
-        price.setprice(pri);
+    public void setprice(Double p){
+        price.setprice(p);
     }
     
     public boolean isvalide(){

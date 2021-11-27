@@ -29,6 +29,7 @@ public class TestReadXml extends Reader {
             XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
             XMLStreamReader reader = xmlInFact.createXMLStreamReader(file);
             while(reader.hasNext()) {
+<<<<<<< HEAD
                 //System.out.println("l18");
                 if(reader.next() == XMLStreamConstants.START_ELEMENT )
                 {
@@ -94,12 +95,49 @@ public class TestReadXml extends Reader {
                                     }
                                 }*/
                             }
+=======
+                if(reader.next() == XMLStreamConstants.START_ELEMENT ){
+                    if(reader.getName().toString() == "client"){
+                        id = Integer.parseInt(reader.getAttributeValue(0));
+                        String commande = "id client : " + reader.getAttributeValue(0);
+                        System.out.println(commande);
+
+                        while(reader.hasNext()){
+                            int liseur = reader.next();
+                            if(liseur == XMLStreamConstants.START_ELEMENT){
+                                    if(reader.getName().toString() == "planche"){
+                                        //Planche p = readPlanche(reader);
+                                        String affichage = "Commande n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " planches à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
+                                        System.out.println(affichage);
+
+                                        if(reader.hasNext()){
+                                            if(reader.next() == XMLStreamConstants.START_ELEMENT){
+                                                if(reader.getName().toString() == "dim"){
+                                                    String dimension = "La longueur est de " + reader.getAttributeValue(0) + "la largeur est de" + reader.getAttributeValue(1);
+                                                    System.out.println(dimension);
+                                                }
+                                               
+                                        }
+                                      
+                                      }   
+                                }
+                            }
+                            if(liseur == XMLStreamConstants.END_ELEMENT ){
+                                if(reader.getName().toString() == "client"){
+                                    break;
+                                }
+                            }
+                        }
+>>>>>>> f1ec61a68e1d25bd7e3b81cc9bbe84789b14dae2
                     }
 
                 }
             }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f1ec61a68e1d25bd7e3b81cc9bbe84789b14dae2
                         //reader.nextTag(); //On regarde le premier client
                         //reader.nextTag(); //On regarde la première commande de planche demandée
 
@@ -108,12 +146,16 @@ public class TestReadXml extends Reader {
                         reader.nextTag(); //On regarde les dimensions de la commande
                         String dimension ="La dimension est de longueur "+reader.getAttributeValue(0)+"  et de largeur " + reader.getAttributeValue(1);
                         System.out.println(dimension);*/
+<<<<<<< HEAD
                  //   }
                     
              //   } 
                 //else
                   //  break;
             
+=======
+
+>>>>>>> f1ec61a68e1d25bd7e3b81cc9bbe84789b14dae2
         }
         catch(IOException exc) {
 
@@ -126,6 +168,7 @@ public class TestReadXml extends Reader {
 
     
     }
+<<<<<<< HEAD
 
      /*   static Planche readPlanche(XMLStreamReader reader) throws XMLStreamException
     {
@@ -133,6 +176,6 @@ public class TestReadXml extends Reader {
     }
 */
 
+=======
+>>>>>>> f1ec61a68e1d25bd7e3b81cc9bbe84789b14dae2
 }
-
-// 
