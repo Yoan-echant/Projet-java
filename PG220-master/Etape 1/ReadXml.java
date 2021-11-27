@@ -62,6 +62,7 @@ public class TestReadXml extends Reader {
                             }
                         }
                     }
+
                 }
             }
                         //reader.nextTag(); //On regarde le premier client
@@ -72,7 +73,6 @@ public class TestReadXml extends Reader {
                         reader.nextTag(); //On regarde les dimensions de la commande
                         String dimension ="La dimension est de longueur "+reader.getAttributeValue(0)+"  et de largeur " + reader.getAttributeValue(1);
                         System.out.println(dimension);*/
-
         }
         catch(IOException exc) {
 
@@ -83,5 +83,6 @@ public class TestReadXml extends Reader {
 
         }
 
+    
     }
 }
