@@ -48,4 +48,8 @@ class Order implements Validable{
         }
         return false;
     }
+
+    public int getnumber(Order order){
+        return order.number;
+    }
 }

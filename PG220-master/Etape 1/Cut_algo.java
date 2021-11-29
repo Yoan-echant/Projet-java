@@ -7,7 +7,7 @@ public class Cut_algo extends Reader{
             ClientOrder[] tabSupp = read_xml("fournisseur.xml");
             int nbSupp= tabSupp.length;
             for (int j; j<nbSupp; j++){
-                if (Compare_size(tabOrder[i],tabSupp[j])==1 && Compare_number(tabOrder[i],tabSupp[j])= >0){
+                if (compare_size(tabOrder[i],tabSupp[j])>= 0 && compare_number(tabOrder[i],tabSupp[j]) >= 0){
                     pannel_num[i]=j;
                     break;
                 }

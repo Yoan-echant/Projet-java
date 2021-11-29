@@ -24,6 +24,10 @@ public class Plank implements Validable{
         this.id_plank=id;
     }
 
+    public int getid(Plank plank){
+        return plank.id_plank;
+    }
+
     private Size getplanksize(){
         return size.initSize();
     }
@@ -37,5 +41,23 @@ public class Plank implements Validable{
             return false;
         }
         return true;
+    }
+
+    public int compare_size(Plank ord1, Plank ord2){
+        Size size1=ord1.size;
+        Size size2=ord2.size;
+        int w1=size.getwidth(size1);
+        int l1=size.getlength(size1);
+        int w2=size.getwidth(size2);
+        int l2=size.getlength(size2);
+        if (l1==l2 && w1==w2){
+            return 0;
+        }
+        else if (l1>=l2 && w1>=w2){
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
 }
