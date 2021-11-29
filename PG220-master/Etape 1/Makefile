@@ -7,7 +7,7 @@ CC= javac
 SHELL = /bin/sh
 
 
-EXECS = Validable.class Client.class ClientOrder.class Date.class Order.class Plank.class Price.class Size.class ReadXml.class Reader.class mov clean2
+EXECS = Validable.class Client.class ClientOrder.class Date.class Order.class Plank.class Price.class Size.class ReaderXml.class Reader.class mov clean2
 
 default: $(EXECS)
 
@@ -21,7 +21,7 @@ Reader.class: Reader.java
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
 	#!@-mv $@ ./bin/
 
-ReadXml.class: ReadXml.java
+ReaderXml.class: ReaderXml.java
 	$(CC) $^
 	@-if [ ! -d "bin" ]; then mkdir bin ; fi
 	#!@-mv $@ ./bin/

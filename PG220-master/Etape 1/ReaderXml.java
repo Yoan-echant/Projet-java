@@ -4,11 +4,16 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamException;
+import java.util.*;
+import java.io.*;
+import java.util.List;
+import java.util.ArrayList;
 
-public class ReaderXml extends Reader {
 
-    public static void main(String[] args)
-    {   int type;
+public class ReaderXml extends Reader{
+
+    private ClientOrder[] main(String[] args)
+    {   int type = -1;
         String date;
         int number;
         Double price;
@@ -16,6 +21,8 @@ public class ReaderXml extends Reader {
         int idplanche;
         int length;
         int width;
+        List<ClientOrder> tab = new ArrayList<ClientOrder>();
+        ClientOrder readerclientorder;
         FileInputStream file = null;
         try {
             String fichier = args[0];
@@ -75,6 +82,8 @@ public class ReaderXml extends Reader {
                                                     System.out.println(dimension);
                                                     length = Integer.parseInt(reader.getAttributeValue(0));
                                                     width = Integer.parseInt(reader.getAttributeValue(1));
+                                                    readerclientorder = createClientOrder(date,number,type, price,id,idplanche,length,width);
+                                                    tab.add(readerclientorder);
                                                 }
                                                
                                         }
@@ -100,6 +109,8 @@ public class ReaderXml extends Reader {
             System.out.print("Erreur XML: " + exc.toString());
 
         }
-
+        ClientOrder[] tab_fin = new ClientOrder[tab.size()];
+        tab.toArray(tab_fin);
+        return tab_fin;
     }
 }
