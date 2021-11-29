@@ -24,4 +24,34 @@ private ClientOrder(String date, int number,int type, Double price,int id_client
     setprice(price);
     settype(type);
 }
+
+public int compare_size(ClientOrder ord1, ClientOrder ord2){
+    return plank.compare_size(ord1.plank,ord2.plank);
+}
+
+public int compare_number(ClientOrder ord1, ClientOrder ord2){
+    int num1= getnumber(ord1);
+    int num2= getnumber(ord2);
+    if (num1==num2){
+        return 0;
+    }
+    else if (num1>num2){
+        return 1;
+    }
+    else{
+        return -1;
+    }
+}
+
+public int get_number(ClientOrder ord){
+    return getnumber(ord);
+}
+
+public int get_client_id(ClientOrder ord){
+    return client.getid(ord.client);
+}
+
+public int get_plank(ClientOrder ord){
+    return plank.getid(ord.plank);
+}
 }

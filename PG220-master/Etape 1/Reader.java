@@ -38,4 +38,23 @@ public class Reader{
     //     this.ClientOrder = TestReadXml(argv[1]);
     // }
 
+    public int compare_size(ClientOrder ord1, ClientOrder ord2){
+        return clientorder.compare_size(ord1,ord2);
+    }
+
+    public int compare_number(ClientOrder ord1, ClientOrder ord2){
+        return clientorder.compare_number(ord1,ord2);
+    }
+
+    public int get_number(ClientOrder ord){
+        return(clientorder.getnumber(ord));
+    }
+
+    public int get_client_id(ClientOrder ord){
+        return(clientorder.get_client_id(ord));
+    }
+    public int get_plank_id(ClientOrder ord){
+        return(clientorder.get_plank_id(ord));
+    }
+
 }
