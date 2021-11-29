@@ -5,5 +5,4 @@ public class Reader{
     //     this.ClientOrder = TestReadXml(argv[1]);
     // }
 
-
 }
