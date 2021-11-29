@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ReaderXml extends Reader{
 
-    private ClientOrder[] main(String[] args)
+    private String[] reader_xml(String[] args)
     {   int type = -1;
         String date;
         int number;
@@ -21,8 +21,9 @@ public class ReaderXml extends Reader{
         int idplanche;
         int length;
         int width;
-        List<ClientOrder> tab = new ArrayList<ClientOrder>();
-        ClientOrder readerclientorder;
+        List<String> tab = new ArrayList<String>();
+        //List<ClientOrder> tab = new ArrayList<ClientOrder>();
+        //ClientOrder readerclientorder;
         FileInputStream file = null;
         try {
             String fichier = args[0];
@@ -48,6 +49,7 @@ public class ReaderXml extends Reader{
                 if(reader.next() == XMLStreamConstants.START_ELEMENT ){
                     if(reader.getName().toString() == balise1){
                         id = Integer.parseInt(reader.getAttributeValue(0));
+                        tab.add(reader.getAttributeValue(0));
                         String commande_ = commande + reader.getAttributeValue(0);
                         System.out.println(commande_);
 
@@ -66,6 +68,9 @@ public class ReaderXml extends Reader{
                                         idplanche = Integer.parseInt(reader.getAttributeValue(0));
                                         number = Integer.parseInt(reader.getAttributeValue(1));
                                         date = reader.getAttributeValue(2);
+                                        tab.add(reader.getAttributeValue(0));
+                                        tab.add(reader.getAttributeValue(1));
+                                        tab.add(reader.getAttributeValue(2));
                                         try{
                                             price = Double.parseDouble(reader.getAttributeValue(3));
                                         }
@@ -73,6 +78,7 @@ public class ReaderXml extends Reader{
                                             price = (double)0;
                                             System.out.println(" Le prix n'est pas un double");     
                                         }
+                                        tab.add(Double.toString(price));
                                         System.out.println(affichage);
 
                                         if(reader.hasNext()){
@@ -82,8 +88,10 @@ public class ReaderXml extends Reader{
                                                     System.out.println(dimension);
                                                     length = Integer.parseInt(reader.getAttributeValue(0));
                                                     width = Integer.parseInt(reader.getAttributeValue(1));
-                                                    readerclientorder = createClientOrder(date,number,type, price,id,idplanche,length,width);
-                                                    tab.add(readerclientorder);
+                                                    tab.add(reader.getAttributeValue(0));
+                                                    tab.add(reader.getAttributeValue(1));
+                                                    // readerclientorder = createClientOrder(date,number,type, price,id,idplanche,length,width);
+                                                    // tab.add(readerclientorder);
                                                 }
                                                
                                         }
@@ -109,7 +117,10 @@ public class ReaderXml extends Reader{
             System.out.print("Erreur XML: " + exc.toString());
 
         }
-        ClientOrder[] tab_fin = new ClientOrder[tab.size()];
+        // ClientOrder[] tab_fin = new ClientOrder[tab.size()];
+        // tab.toArray(tab_fin);
+        // return tab_fin;
+        String[] tab_fin = new String[tab.size()];
         tab.toArray(tab_fin);
         return tab_fin;
     }
