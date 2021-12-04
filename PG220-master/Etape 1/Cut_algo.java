@@ -21,4 +21,8 @@ public class Cut_algo extends Reader{
             }
         }
     }
+
+    private int reduce_number(ClientOrder clientorder, int entier){
+        return get_number(clientorder)-entier;
+    }
 }
