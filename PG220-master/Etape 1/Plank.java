@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Plank implements Validable{
     private int id_plank;
     private Size size;
@@ -40,7 +43,7 @@ public class Plank implements Validable{
         if (this.id_plank <0){
             return false;
         }
-        return (this.size).(size.isvalid());
+        return size.isvalide();
         
     }
 
@@ -64,24 +67,26 @@ public class Plank implements Validable{
 
     public Plank[] cut_plank(Plank order, Plank supplier){
         int w_o=size.getwidth(order.size);
-        int l_or=size.getlength(order.size);
+        int l_o=size.getlength(order.size);
         int w_s=size.getwidth(supplier.size);
         int l_s=size.getlength(supplier.size);
         Plank pannel= new Plank(getid(order),l_o,w_o);
         Plank plank1=new Plank(getid(supplier),l_s-l_o,w_s-w_o);
         Plank plank2=new Plank(getid(supplier),l_o,w_s-w_o);
         Plank plank3=new Plank(getid(supplier),l_s-l_o,w_o);
-        Plank[] tab_ret;
+        List<Plank> tab_ret = new ArrayList<Plank>();
         tab_ret.add(pannel);
-        if (plank1.isvalid()==true){
+        if (plank1.isvalide()==true){
             tab_ret.add(plank1);
         }
-        if (plank2.isvalid()==true){
+        if (plank2.isvalide()==true){
             tab_ret.add(plank2);
         }
-        if (plank3.isvalid()==true){
+        if (plank3.isvalide()==true){
             tab_ret.add(plank3);
         }
-        return tab_ret;
+        Plank[] tab_fin = new Plank[tab_ret.size()];
+        tab_ret.toArray(tab_fin);
+        return tab_fin;
     }
 }

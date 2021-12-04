@@ -61,4 +61,8 @@ public class Reader{
         return(clientorder.get_plank_id(ord));
     }
 
+    public ClientOrder get_clientorder(){
+        return this.clientorder;
+    }
+
 }
