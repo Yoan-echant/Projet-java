@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class ReaderXml extends Reader{
+public class ReaderXml{
 
-    private String[] reader_xml(String[] args)
+    public String[] reader_xml(String arg)
     {   int type = -1;
         String date;
         int number;
@@ -26,7 +26,7 @@ public class ReaderXml extends Reader{
         //ClientOrder readerclientorder;
         FileInputStream file = null;
         try {
-            String fichier = args[0];
+            String fichier = arg;
             file = new FileInputStream(fichier);
             String balise1="";
             String balise2="";
@@ -43,6 +43,7 @@ public class ReaderXml extends Reader{
                 balise2 = "panneau";
                 commande = "id fournisseur :";
             }
+            tab.add(Integer.toString(type));
             XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
             XMLStreamReader reader = xmlInFact.createXMLStreamReader(file);
             while(reader.hasNext()) {
