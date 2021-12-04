@@ -40,7 +40,8 @@ public class Plank implements Validable{
         if (this.id_plank <0){
             return false;
         }
-        return true;
+        return (this.size).(size.isvalid());
+        
     }
 
     public int compare_size(Plank ord1, Plank ord2){
@@ -59,5 +60,28 @@ public class Plank implements Validable{
         else{
             return -1;
         }
+    }
+
+    public Plank[] cut_plank(Plank order, Plank supplier){
+        int w_o=size.getwidth(order.size);
+        int l_or=size.getlength(order.size);
+        int w_s=size.getwidth(supplier.size);
+        int l_s=size.getlength(supplier.size);
+        Plank pannel= new Plank(getid(order),l_o,w_o);
+        Plank plank1=new Plank(getid(supplier),l_s-l_o,w_s-w_o);
+        Plank plank2=new Plank(getid(supplier),l_o,w_s-w_o);
+        Plank plank3=new Plank(getid(supplier),l_s-l_o,w_o);
+        Plank[] tab_ret;
+        tab_ret.add(pannel);
+        if (plank1.isvalid()==true){
+            tab_ret.add(plank1);
+        }
+        if (plank2.isvalid()==true){
+            tab_ret.add(plank2);
+        }
+        if (plank3.isvalid()==true){
+            tab_ret.add(plank3);
+        }
+        return tab_ret;
     }
 }
