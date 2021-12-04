@@ -1,10 +1,10 @@
 public class Cut_algo extends Reader{
     public void main(int argv, String[] args){
-        ClientOrder[] tabOrder=read_xml("clients.xml");
+        ClientOrder[] tabOrder=read("clients.xml");
         int nbOrder= tabOrder.length;
         int pannel_num[]=new int[nbOrder];
         for (int i=0; i< nbOrder; i++){
-            ClientOrder[] tabSupp = read_xml("fournisseur.xml");
+            ClientOrder[] tabSupp = read("fournisseur.xml");
             int nbSupp= tabSupp.length;
             for (int j; j<nbSupp; j++){
                 if (compare_size(tabOrder[i],tabSupp[j])>= 0 && compare_number(tabOrder[i],tabSupp[j]) >= 0){

@@ -27,7 +27,7 @@ public class Client implements Validable{
     }
 
     public int getid(Client client){
-        return client.id;
+        return client.id_client;
     }
 
     public boolean isvalide(){

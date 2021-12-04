@@ -51,7 +51,7 @@ public int get_client_id(ClientOrder ord){
     return client.getid(ord.client);
 }
 
-public int get_plank(ClientOrder ord){
+public int get_plank_id(ClientOrder ord){
     return plank.getid(ord.plank);
 }
 }
