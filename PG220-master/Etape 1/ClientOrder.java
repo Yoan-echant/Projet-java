@@ -16,6 +16,11 @@ private ClientOrder(){
     setnumber(0);
 }
 
+private ClientOrder(Plank plank, Client client){
+    this.plank = plank;
+    this.client=client;
+}
+
 private ClientOrder(String date, int number,int type, Double price,int id_client,int idPlank,int length,int width){
     this.client=client.createClient(id_client);
     this.plank=plank.createPlank(idPlank,length, width);
@@ -54,4 +59,15 @@ public int get_client_id(ClientOrder ord){
 public int get_plank_id(ClientOrder ord){
     return plank.getid(ord.plank);
 }
+
+public ClientOrder[] cutplank(ClientOrder order, ClientOrder supplier){
+        int i;
+        Plank[] tab_ret=plank.cutplank(order.plank, supplier.plank);
+        ClientOrder[] tab_sup;
+        tab_sup.add(tab_ret[0]);
+        for (i=1; i<tab_ret.size;i++){
+            tab_sup.add(new ClientOrder(tab_ret[i-1],supplier));
+        }
+        return tab_sup;
+    }
 }
