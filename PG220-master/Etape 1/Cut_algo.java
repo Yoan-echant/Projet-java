@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Cut_algo extends Reader{
     
-    public void main(int argv, String[] args){
+    public static void main(String[] args){
         ClientOrder[] tabOrder=read("clients.xml");
         List<ClientOrder> cut = new ArrayList<ClientOrder>();
         int nbOrder= tabOrder.length;

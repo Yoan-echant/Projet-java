@@ -66,9 +66,9 @@ public class ClientOrder extends Order{
     public ClientOrder[] cutplank(ClientOrder order, ClientOrder supplier){
             Plank[] tab_ret=plank.cut_plank(order.plank, supplier.plank);
             List<ClientOrder> tab_sup = new ArrayList<ClientOrder>();
-            tab_sup.add(tab_ret[0]);
+            //tab_sup.add(tab_ret[0]);
             for (int i=1; i<tab_ret.length;i++){
-                tab_sup.add(new ClientOrder(tab_ret[i-1],supplier));
+                tab_sup.add(new ClientOrder(tab_ret[i-1],supplier.client));
             }
             ClientOrder[] tab_fin = new ClientOrder[tab_sup.size()];
             tab_sup.toArray(tab_fin);
