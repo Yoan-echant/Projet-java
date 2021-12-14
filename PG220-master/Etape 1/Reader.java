@@ -5,6 +5,13 @@ public class Reader{
     private ClientOrder clientorder;
     private ReaderXml readerxml;
 
+    public Reader(){
+        ClientOrder clientorder = new ClientOrder();
+        ReaderXml readerxml = new ReaderXml();
+        this.clientorder = clientorder.initClientOrder() ;
+        this.readerxml = readerxml.initReaderXml();
+    }
+
     public ClientOrder createClientOrder(String date, int number,int type, Double price,int id_client,int idPlank,int length,int width){
         return clientorder.createClientOrder(date,number,type,price,id_client,idPlank,length,width);
     }
@@ -22,6 +29,14 @@ public class Reader{
         String [] tab = readerxml.reader_xml(xml);
         List<ClientOrder> tab_order = new ArrayList<ClientOrder>();
         for(int i=0; i< tab.length-8; i=i+8){
+                System.out.println("type :" + tab[i]);
+                System.out.println("id_client:" + tab[i+1]);
+                 System.out.println("idPlank:" + tab[i+2]);
+                  System.out.println("number:" + tab[i+3]);
+                   System.out.println("date :" + tab[i+4]);
+                    System.out.println("price:" + tab[i+5]);
+                     System.out.println("length :" + tab[i+6]);
+                      System.out.println("width :" + tab[i+7]);
                 type = Integer.parseInt(tab[i+0]);
                 id_client = Integer.parseInt(tab[i+1]);
                 idPlank = Integer.parseInt(tab[i+2]);
@@ -37,10 +52,6 @@ public class Reader{
         tab_order.toArray(tab_fin);
         return tab_fin;
     }
-
-    // public static void main(String[] args) {
-    //     this.ClientOrder = TestReadXml(argv[1]);
-    // }
 
     public int compare_size(ClientOrder ord1, ClientOrder ord2){
         return clientorder.compare_size(ord1,ord2);

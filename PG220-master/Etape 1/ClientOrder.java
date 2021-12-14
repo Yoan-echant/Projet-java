@@ -13,10 +13,11 @@ public class ClientOrder extends Order{
         return new ClientOrder(date, number, type, price, id_client, idPlank, length, width);
     }
 
-    private ClientOrder(){
+    public ClientOrder(){
+        Client client = new Client();
+        Plank plank = new Plank();
         this.client=client.initClient();
         this.plank=plank.initPlank();
-        setnumber(0);
     }
 
     private ClientOrder(Plank plank, Client client){
@@ -25,6 +26,8 @@ public class ClientOrder extends Order{
     }
 
     private ClientOrder(String date, int number,int type, Double price,int id_client,int idPlank,int length,int width){
+        Client client = new Client();
+        Plank plank = new Plank();
         this.client=client.createClient(id_client);
         this.plank=plank.createPlank(idPlank,length, width);
         setnumber(number);

@@ -5,6 +5,8 @@ class Order implements Validable{
     private int type;
 
     public Order(){
+        Date date = new Date();
+        Price price = new Price();
         this.number=0;
         this.date= date.createdate();
         this.price= price.createprice();

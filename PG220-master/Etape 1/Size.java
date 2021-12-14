@@ -10,7 +10,7 @@ public class Size implements Validable{
         return new Size(length, width);
     }
 
-    private Size(){
+    public Size(){
         this(0,0);
     }
 

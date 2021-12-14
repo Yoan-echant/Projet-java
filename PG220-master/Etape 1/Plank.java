@@ -13,12 +13,13 @@ public class Plank implements Validable{
         return new Plank(id, length, width);
     }
 
-    private Plank(){
+    public Plank(){
         this.id_plank=0;
         this.size=getplanksize();
     }
 
     private Plank(int id, int length, int width){
+        Size size = new Size();
         setid(id);
         setsize(size.CreateSize(length, width));
     }
@@ -32,6 +33,7 @@ public class Plank implements Validable{
     }
 
     private Size getplanksize(){
+        Size size = new Size();
         return size.initSize();
     }
 
