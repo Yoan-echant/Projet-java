@@ -43,8 +43,8 @@ public class Reader{
                 number = Integer.parseInt(tab[i+3]);
                 date   = tab[i+4];
                 price = Double.parseDouble(tab[i+5]);
-                length = Integer.parseInt(tab[i+6]);
-                width = Integer.parseInt(tab[i+7]);
+                length = (int)Double.parseDouble(tab[i+6]);
+                width = (int)Double.parseDouble(tab[i+7]);
                 readerclientorder = createClientOrder(date,number,type, price,id_client,idPlank,length,width);
                 tab_order.add(readerclientorder);
         }
