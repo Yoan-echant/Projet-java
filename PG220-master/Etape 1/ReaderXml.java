@@ -60,7 +60,7 @@ public class ReaderXml{
                         id = Integer.parseInt(reader.getAttributeValue(0));
                         tab.add(reader.getAttributeValue(0));
                         String commande_ = commande + reader.getAttributeValue(0);
-                        System.out.println(commande_);
+                        //System.out.println(commande_);
 
                         while(reader.hasNext()){
                             int liseur = reader.next();
@@ -88,21 +88,21 @@ public class ReaderXml{
                                             affichage = "Ensemble de panneau n°" + reader.getAttributeValue(0) + " de " + reader.getAttributeValue(1) + " panneaux à livrer pour le " + reader.getAttributeValue(2) + " au prix maximal de " +reader.getAttributeValue(3);
                                         }
                                         tab.add(Double.toString(price));
-                                        System.out.println(affichage);
+                                        //System.out.println(affichage);
 
                                         while(reader.hasNext()){
                                             int liseur2 = reader.next();
                                             if(liseur2 == XMLStreamConstants.START_ELEMENT){
                                                 if(reader.getName().toString() == "dim"){
                                                     String dimension = "La longueur est de " + reader.getAttributeValue(0) + "la largeur est de" + reader.getAttributeValue(1);
-                                                    System.out.println(dimension);
+                                                    //System.out.println(dimension);
 
                                                     try{
                                                         length = (int)Double.parseDouble(reader.getAttributeValue(0));
                                                     }
                                                     catch(Exception e){
                                                         length = (int)0;
-                                                        System.out.println(" Le length n'est pas un int");     
+                                                        //System.out.println(" Le length n'est pas un int");     
                                                     }
 
                                                     try{
@@ -110,7 +110,7 @@ public class ReaderXml{
                                                     }
                                                     catch(Exception e){
                                                         width =(int)0;
-                                                        System.out.println("Le width n'est pas un int");
+                                                        //System.out.println("Le width n'est pas un int");
                                                     }
 
                                                     tab.add(Integer.toString(length));
