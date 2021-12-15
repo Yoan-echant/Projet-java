@@ -29,8 +29,9 @@ public class Cut_algo extends Reader{
                 }
             }
             for (int k=0; k< nbOrder; k++){
+                System.out.println(pannel_num[k]);
                 if (pannel_num[k]==0){
-                    System.out.println("Il n'y a pas de panneau assez grand pour satisfaire la commande de la planche"+ reader.get_plank_id(tabOrder[i])+"du client"+reader.get_client_id(tabOrder[i]));
+                    //System.out.println("Il n'y a pas de panneau assez grand pour satisfaire la commande de la planche"+ reader.get_plank_id(tabOrder[i])+"du client"+reader.get_client_id(tabOrder[i]));
                 }
             }
         }
