@@ -28,23 +28,23 @@ public class Reader{
         ClientOrder readerclientorder;
         String [] tab = readerxml.reader_xml(xml);
         List<ClientOrder> tab_order = new ArrayList<ClientOrder>();
-        for(int i=0; i< tab.length-8; i=i+8){
-                System.out.println("type :" + tab[i]);
-                System.out.println("id_client:" + tab[i+1]);
-                 System.out.println("idPlank:" + tab[i+2]);
-                  System.out.println("number:" + tab[i+3]);
-                   System.out.println("date :" + tab[i+4]);
-                    System.out.println("price:" + tab[i+5]);
-                     System.out.println("length :" + tab[i+6]);
-                      System.out.println("width :" + tab[i+7]);
-                type = Integer.parseInt(tab[i+0]);
-                id_client = Integer.parseInt(tab[i+1]);
-                idPlank = Integer.parseInt(tab[i+2]);
-                number = Integer.parseInt(tab[i+3]);
-                date   = tab[i+4];
-                price = Double.parseDouble(tab[i+5]);
-                length = (int)Double.parseDouble(tab[i+6]);
-                width = (int)Double.parseDouble(tab[i+7]);
+        System.out.println("type :" + tab[0]);
+        type = Integer.parseInt(tab[0]);
+        for(int i=1; i< tab.length-7; i=i+7){
+                System.out.println("id_client:" + tab[i]);
+                 System.out.println("idPlank:" + tab[i+1]);
+                  System.out.println("number:" + tab[i+2]);
+                   System.out.println("date :" + tab[i+3]);
+                    System.out.println("price:" + tab[i+4]);
+                     System.out.println("length :" + tab[i+5]);
+                      System.out.println("width :" + tab[i+6]);
+                id_client = Integer.parseInt(tab[i]);
+                idPlank = Integer.parseInt(tab[i+1]);
+                number = Integer.parseInt(tab[i+2]);
+                date   = tab[i+3];
+                price = Double.parseDouble(tab[i+4]);
+                length = (int)Double.parseDouble(tab[i+5]);
+                width = (int)Double.parseDouble(tab[i+6]);
                 readerclientorder = createClientOrder(date,number,type, price,id_client,idPlank,length,width);
                 tab_order.add(readerclientorder);
         }

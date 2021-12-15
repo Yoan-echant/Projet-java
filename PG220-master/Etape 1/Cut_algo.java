@@ -11,7 +11,7 @@ public class Cut_algo extends Reader{
         int nbOrder= tabOrder.length;
         int pannel_num[]=new int[nbOrder];
         for (int i=0; i< nbOrder; i++){
-            ClientOrder[] tabSupp = reader.read("fournisseur.xml");
+            ClientOrder[] tabSupp = reader.read("fournisseurs.xml");
             int nbSupp= tabSupp.length;
             List<ClientOrder> tabSuppList = new ArrayList<>(Arrays.asList(tabSupp)); //Convertit le tab en liste pour pouvoir add
 
