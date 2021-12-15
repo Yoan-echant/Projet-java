@@ -43,15 +43,7 @@ public class ClientOrder extends Order{
     public int compare_number(ClientOrder ord1, ClientOrder ord2){
         int num1= getnumber(ord1);
         int num2= getnumber(ord2);
-        if (num1==num2){
-            return 0;
-        }
-        else if (num1>num2){
-            return 1;
-        }
-        else{
-            return -1;
-        }
+        return num1-num2;
     }
 
     public int get_number(ClientOrder ord){
