@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class WriterXml{
 
-public void ecriture(int [] client_id, int []planche, int [] id_fournisseur, int []panneau, int []x, int [] y){
+public void ecriture(int [] client_id, /*int []planche, int [] id_fournisseur,*/ int []panneau, int []x, int [] y){
     try{
     FileOutputStream file = null;
     String fichier= "decoupes.xml";
@@ -42,11 +42,11 @@ public void ecriture(int [] client_id, int []planche, int [] id_fournisseur, int
         writer.writeAttribute("planche",Integer.toString(planche[k]));
         writer.writeEndElement();
 
-        writer.writeCharacters(System.getProperty("line.separator"));
+        /*writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("fournisseur");
         writer.writeAttribute("id",Integer.toString(id_fournisseur[k]));
         writer.writeAttribute("panneau",Integer.toString(panneau[k]));
-        writer.writeEndElement();
+        writer.writeEndElement();*/
 
         writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("position");

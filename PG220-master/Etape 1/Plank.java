@@ -37,6 +37,17 @@ public class Plank implements Validable{
         return size.initSize();
     }
 
+    public int getx(Plank ord1){
+        Size size1=ord1.size;
+        return size.getwidth(size1);
+    }
+
+    public int gety(Plank ord1){
+        Size size1=ord1.size;
+        return size.getlength(size1);
+    }
+
+
     private void setsize(Size size){
         this.size=size;
     }
@@ -67,14 +78,14 @@ public class Plank implements Validable{
         }
     }
 
-    public Plank[] cut_plank(Plank order, Plank supplier){
+    public Plank cut_plank(Plank order, Plank supplier){
         int w_o=size.getwidth(order.size);
         int l_o=size.getlength(order.size);
         int w_s=size.getwidth(supplier.size);
         int l_s=size.getlength(supplier.size);
         Plank pannel= new Plank(getid(order),l_o,w_o);
-        Plank plank1=new Plank(getid(supplier),l_s-l_o,w_s-w_o);
-        Plank plank2=new Plank(getid(supplier),l_o,w_s-w_o);
+        //Plank plank1=new Plank(getid(supplier),l_s-l_o,w_s-w_o);
+        /*plank plank2=new Plank(getid(supplier),l_o,w_s-w_o);
         Plank plank3=new Plank(getid(supplier),l_s-l_o,w_o);
         List<Plank> tab_ret = new ArrayList<Plank>();
         tab_ret.add(pannel);
@@ -88,7 +99,7 @@ public class Plank implements Validable{
             tab_ret.add(plank3);
         }
         Plank[] tab_fin = new Plank[tab_ret.size()];
-        tab_ret.toArray(tab_fin);
-        return tab_fin;
+        tab_ret.toArray(tab_fin);*/
+        return pannel;
     }
 }

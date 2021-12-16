@@ -68,6 +68,12 @@ public class Reader{
     public int get_client_id(ClientOrder ord){
         return(clientorder.get_client_id(ord));
     }
+    public int getx(ClientOrder ord){
+        return(clientorder.getx(ord));
+    }
+    public int gety(ClientOrder ord){
+        return(clientorder.gety(ord));
+    }
     public int get_plank_id(ClientOrder ord){
         return(clientorder.get_plank_id(ord));
     }
@@ -75,5 +81,8 @@ public class Reader{
     public ClientOrder get_clientorder(){
         return this.clientorder;
     }
+    public int get_type(ClientOrder ord){
+        return clientorder.get_type(ord1);
+           }
 
 }

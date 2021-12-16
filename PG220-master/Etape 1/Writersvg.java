@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 
 public class Writersvg{
-    public static void main(String[] args) {
+    public void ecrituresvg(int [] weigth, int [] heigth) {
      try{
         FileOutputStream file = null;
         String fichier= "decoupes.svg";

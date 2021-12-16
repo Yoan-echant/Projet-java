@@ -39,6 +39,15 @@ public class ClientOrder extends Order{
     public int compare_size(ClientOrder ord1, ClientOrder ord2){
         return plank.compare_size(ord1.plank,ord2.plank);
     }
+    public int getx(ClientOrder ord1){
+        return plank.getx(ord1.plank);
+    } 
+    public int gety(ClientOrder ord1){
+        return plank.gety(ord1.plank);
+    } 
+    public int gettype(ClientOrder ord1){
+        return ord1.type;
+    }
 
     public int compare_number(ClientOrder ord1, ClientOrder ord2){
         int num1= getnumber(ord1);
@@ -58,15 +67,19 @@ public class ClientOrder extends Order{
         return plank.getid(ord.plank);
     }
 
-    public ClientOrder[] cutplank(ClientOrder order, ClientOrder supplier){
-            Plank[] tab_ret=plank.cut_plank(order.plank, supplier.plank);
+    public ClientOrder cutplank(ClientOrder order, ClientOrder supplier){
+            //Plank[] tab_ret=plank.cut_plank(order.plank, supplier.plank);
+            Plank tab_ret=plank.cut_plank(order.plank, supplier.plank);
+
+/*
             List<ClientOrder> tab_sup = new ArrayList<ClientOrder>();
             //tab_sup.add(tab_ret[0]);
             for (int i=1; i<tab_ret.length;i++){
                 tab_sup.add(new ClientOrder(tab_ret[i-1],supplier.client));
             }
             ClientOrder[] tab_fin = new ClientOrder[tab_sup.size()];
-            tab_sup.toArray(tab_fin);
+            tab_sup.toArray(tab_fin);*/
+            ClientOrder tab_fin=new ClientOrder(tab_ret,order.client);
             return tab_fin;
         }
 }

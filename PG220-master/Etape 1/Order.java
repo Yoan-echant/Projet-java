@@ -54,5 +54,8 @@ class Order implements Validable{
     public int getnumber(Order order){
         return order.number;
     }
+    public int getntype(Order order){
+        return order.type;
+    }
 
 }
