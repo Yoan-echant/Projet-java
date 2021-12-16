@@ -45,9 +45,6 @@ public class ClientOrder extends Order{
     public int gety(ClientOrder ord1){
         return plank.gety(ord1.plank);
     } 
-    public int gettype(ClientOrder ord1){
-        return ord1.type;
-    }
 
     public int compare_number(ClientOrder ord1, ClientOrder ord2){
         int num1= getnumber(ord1);

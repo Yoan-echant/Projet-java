@@ -81,8 +81,6 @@ public class Reader{
     public ClientOrder get_clientorder(){
         return this.clientorder;
     }
-    public int get_type(ClientOrder ord){
-        return clientorder.get_type(ord1);
-           }
+
 
 }
