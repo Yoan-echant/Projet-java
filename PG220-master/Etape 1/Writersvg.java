@@ -33,6 +33,7 @@ public class Writersvg{
         // ecriture fichier avec position, taille
 
         // test random element : 
+        for (int k =0; k<)
         writer.writeStartElement("rect");
         writer.writeAttribute("x",Integer.toString(100));
         writer.writeAttribute("y",Integer.toString(200));

@@ -22,6 +22,21 @@ class Price implements Validable{
         this.price=p;
     }
 
+    
+    
+    public int compare_price(Price p1, Price p2){
+        if (p1.isvalide()==false || p2.isvalide()==false){
+            return -1;
+        }
+        else{
+            if (p1.price>=p2.price){
+            return 1;
+            }
+            else{
+                return -1;
+            }
+        }
+    }
     public boolean isvalide(){
         boolean b=this.price instanceof  Double;
         if( b == false) {
