@@ -27,7 +27,56 @@ public class Date implements Validable{
     public void setdate(String date){
         this.date=date;
     }
-
+    public int compare_date(Date p1, Date p2){
+        if (p1.isvalide()==false || p2.isvalide()==false){
+            return -1;
+        }
+        else{
+        String jourp1;
+        String moisp1;
+        String anneep1;
+        jourp1=p1.date.substring(0,2);
+        moisp1=p1.date.substring(3,5);
+        anneep1=p1.date.substring(6,8);
+        int jourp1bis=Integer.parseInt(jourp1);
+        int moisp1bis=Integer.parseInt(moisp1);
+        int anneep1bis=Integer.parseInt(anneep1);   
+        String jourp2;
+        String moisp2;
+        String anneep2;
+        jourp2=p2.date.substring(0,2);
+        moisp2=p2.date.substring(3,5);
+        anneep2=p2.date.substring(6,8);
+        int jourp2bis=Integer.parseInt(jourp2);
+        int moisp2bis=Integer.parseInt(moisp2);
+        int anneep2bis=Integer.parseInt(anneep2);
+        if (anneep1bis >anneep2bis){
+            return 1;
+        }
+        else if (anneep1bis <anneep2bis){
+            return -1;
+        }
+        else{
+            if (moisp1bis>moisp2bis){
+                return 1;
+            }
+            else if (moisp1bis<moisp2bis){
+                return -1;
+            }
+            else{
+                if (jourp2bis>jourp1bis){
+                return -1;
+                }
+                else {
+                    return 1;
+                }
+                
+            }
+        }
+        }
+            
+        
+    }
     public boolean isvalide(){
         String jour;
         String mois;

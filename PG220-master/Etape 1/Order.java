@@ -58,5 +58,21 @@ class Order implements Validable{
     public int getntype(Order order){
         return order.type;
     }
+    public int compareprice(Order order1, Order order2){
+        return price.compare_price(getprice(order1),getprice(order2));
+    }
+
+    private Price getprice(Order order){
+        return order.price;
+
+    }
+    public int comparedate(Order order1, Order order2){
+        return date.compare_date(getdate(order1),getdate(order2));
+    }
+
+    private Date getdate(Order order){
+        return order.date;
+
+    }
 
 }

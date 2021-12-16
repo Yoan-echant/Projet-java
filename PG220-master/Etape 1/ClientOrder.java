@@ -41,6 +41,14 @@ public class ClientOrder extends Order{
     public int compare_size(ClientOrder ord1, ClientOrder ord2){
         return plank.compare_size(ord1.plank,ord2.plank);
     }
+
+    public int compare_price(ClientOrder ord1, ClientOrder ord2){
+        return compareprice(ord1,ord2);
+    }
+
+     public int compare_date(ClientOrder ord1, ClientOrder ord2){
+        return comparedate(ord1,ord2);
+    }
     public int getx(ClientOrder ord1){
         return plank.getx(ord1.plank);
     } 

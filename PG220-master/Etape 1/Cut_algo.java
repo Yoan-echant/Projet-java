@@ -22,7 +22,7 @@ public class Cut_algo extends Reader{
 
                 System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_size(tabOrder[i],tabSupp[j]));
                 System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_number(tabOrder[i],tabSupp[j]));
-                if (clientorder.compare_size(tabOrder[i],tabSupp[j]) <= 0 && clientorder.compare_number(tabOrder[i],tabSupp[j]) <= 0){
+                if (clientorder.compare_size(tabOrder[i],tabSupp[j]) <= 0 && clientorder.compare_number(tabOrder[i],tabSupp[j]) <= 0 && (clientorder.compare_price(tabOrder[i],tabSupp[j])>=0) && (clientorder.comparedate(tabOrder[i],tabSupp[j])==1)){
                     pannel_num[i]=1;
                     
                     ClientOrder tab=clientorder.cutplank(tabOrder[i],tabSupp[pannel_num[i]]);
