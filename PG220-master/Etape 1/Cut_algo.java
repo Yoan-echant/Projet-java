@@ -73,8 +73,11 @@ public class Cut_algo extends Reader{
             y[p]=reader.gety(cut.get(p));
 
         }
-        // fonction inaccessible pour le moment; 
-        reader.write(tab_clientfd, planche,id_fournisseur,panneau,x,y);
+        // On écrit la découpe des planches dans découpes.xml
+        reader.write(tab_clientfd, planche,id_fournisseur,panneau,y,x);
+        // Svg
+        reader.write_svg(x,y);
+
     }
 
     private static int dec_number(ClientOrder clientorder, int entier){
