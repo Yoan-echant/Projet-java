@@ -20,8 +20,11 @@ public class Cut_algo extends Reader{
             for (int j=0; j<nbSupp; j++){
                 ClientOrder clientorder = new ClientOrder();
 
-                System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_size(tabOrder[i],tabSupp[j]));
-                System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_number(tabOrder[i],tabSupp[j]));
+              //  System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_size(tabOrder[i],tabSupp[j]));
+               // System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_number(tabOrder[i],tabSupp[j]));
+               // System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.compare_price(tabOrder[i],tabSupp[j]));
+               // System.out.println("tab order" + i + "tabSupp " +j +" : " + clientorder.comparedate(tabOrder[i],tabSupp[j]));
+
                 if (clientorder.compare_size(tabOrder[i],tabSupp[j]) <= 0 && clientorder.compare_number(tabOrder[i],tabSupp[j]) <= 0 && (clientorder.compare_price(tabOrder[i],tabSupp[j])>=0) && (clientorder.comparedate(tabOrder[i],tabSupp[j])==1)){
                     pannel_num[i]=1;
                     
@@ -34,6 +37,14 @@ public class Cut_algo extends Reader{
                         tabSuppList.add(tab[k]);
                     }*/
                     break;
+                }
+                if ((clientorder.compare_price(tabOrder[i],tabSupp[j])==-1)){
+                System.out.println("On ne satisfait pas la commande de la planche " + reader.get_plank_id(tabOrder[i])+" du client "+reader.get_client_id(tabOrder[i])+" à cause du prix qui est invalide");
+
+                }
+                if ((clientorder.compare_date(tabOrder[i],tabSupp[j])==-1)){
+                        System.out.println("On ne satisfait pas la commande de la planche " + reader.get_plank_id(tabOrder[i])+" du client "+reader.get_client_id(tabOrder[i])+" à cause de la date qui est invalide");
+
                 }
             }
         }
