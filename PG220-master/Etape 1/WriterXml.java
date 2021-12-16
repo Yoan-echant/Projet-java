@@ -104,7 +104,7 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
             writer.writeAttribute("x",Integer.toString(100));
             writer.writeAttribute("y",Integer.toString(200));
             writer.writeAttribute("width",Integer.toString(60));
-            writer.writeAttribute("heigth",Integer.toString(70));
+            writer.writeAttribute("height",Integer.toString(70));
             writer.writeEndElement();
             writer.writeEndElement();
 
