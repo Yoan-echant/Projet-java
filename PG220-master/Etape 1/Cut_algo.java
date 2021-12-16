@@ -29,7 +29,7 @@ public class Cut_algo extends Reader{
                     System.out.println("On a satisfait la commande de la planche " + reader.get_plank_id(tabOrder[i])+" du client "+reader.get_client_id(tabOrder[i]));
                     cut.add(tab);
                     
-                    dec_number(tabSupp[j],reader.get_clientorder().get_number(tabSupp[j]));
+                    dec_number(tabSupp[j],reader.get_clientorder().get_number(tabOrder[i]));
                     /*for (int k=1; k<tab.length;k++){
                         tabSuppList.add(tab[k]);
                     }*/
@@ -45,19 +45,21 @@ public class Cut_algo extends Reader{
         }
         int taille=cut.size();
         int tab_clientfd[];
-        int planche[];
+        int plank[];
         int x[];
         int y[];
         int id_fournisseur[];
-        int panneau[];
+        int pannel[];
+        int number[];
 
         tab_clientfd=new int[taille];
-        planche=new int[taille];
+        plank=new int[taille];
         x=new int[taille];
         y=new int[taille];
        
        id_fournisseur=new int[taille];
-       panneau=new int[taille];
+       pannel=new int[taille];
+       number=new int[taille];
 
     // il faut regarder le type pour savoir si on doit remplir id_fournisseur ou tab_client..
 
@@ -66,17 +68,18 @@ public class Cut_algo extends Reader{
 
 
             tab_clientfd[p]=reader.get_client_id(cut.get(p));
-            planche[p]=reader.get_plank_id(cut.get(p));
+            plank[p]=reader.get_plank_id(cut.get(p));
             id_fournisseur[p]=reader.get_client_id(tabSupp[p]);
-            panneau[p]=reader.get_plank_id(tabSupp[p]);
+            pannel[p]=reader.get_plank_id(tabSupp[p]);
             x[p]= reader.getx(cut.get(p));
             y[p]=reader.gety(cut.get(p));
+            number[p]=reader.get_number(cut.get(p));
 
         }
         // On écrit la découpe des planches dans découpes.xml
-        reader.write(tab_clientfd, planche,id_fournisseur,panneau,y,x);
+        reader.write(tab_clientfd, plank,id_fournisseur,pannel,y,x);
         // Svg
-        reader.write_svg(x,y);
+        reader.write_svg(x,y,number);
 
     }
 

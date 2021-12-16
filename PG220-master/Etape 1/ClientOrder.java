@@ -20,9 +20,11 @@ public class ClientOrder extends Order{
         this.plank=plank.initPlank();
     }
 
-    private ClientOrder(Plank plank, Client client){
+    private ClientOrder(Plank plank, Client client, int number, int type){
         this.plank = plank;
         this.client=client;
+        setnumber(number);
+        settype(type);
     }
 
     private ClientOrder(String date, int number,int type, Double price,int id_client,int idPlank,int length,int width){
@@ -55,6 +57,10 @@ public class ClientOrder extends Order{
     public int get_number(ClientOrder ord){
         return getnumber(ord);
     }
+     public int get_type(ClientOrder ord){
+        return getntype(ord);
+    }
+
 
     public int get_client_id(ClientOrder ord){
         return client.getid(ord.client);
@@ -76,7 +82,7 @@ public class ClientOrder extends Order{
             }
             ClientOrder[] tab_fin = new ClientOrder[tab_sup.size()];
             tab_sup.toArray(tab_fin);*/
-            ClientOrder tab_fin=new ClientOrder(tab_ret,order.client);
+            ClientOrder tab_fin=new ClientOrder(tab_ret,order.client, getnumber(order),getntype(order));
             return tab_fin;
         }
 }

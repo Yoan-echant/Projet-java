@@ -60,8 +60,8 @@ public class Reader{
         writerxml.writer_xml(id_client ,planche,id_fournisseur,panneau,x,y);
     }
 
-    public void write_svg(int [] weigth, int [] heigth){
-        writerxml.writesvg(weigth,heigth);
+    public void write_svg(int [] weigth, int [] heigth, int [] number){
+        writerxml.writesvg(weigth,heigth,number);
     }
 
     public int compare_size(ClientOrder ord1, ClientOrder ord2){

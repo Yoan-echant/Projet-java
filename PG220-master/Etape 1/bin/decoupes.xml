@@ -13,8 +13,5 @@
 <client id="1" planche="0"></client>
 <fournisseur id="1" panneau="1"></fournisseur>
 <position x="50" y="40"></position>
-<client id="1" planche="2"></client>
-<fournisseur id="1" panneau="2"></fournisseur>
-<position x="50" y="40"></position>
 </decoupe>
 </decoupes>

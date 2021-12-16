@@ -43,6 +43,7 @@ class Order implements Validable{
     public void setprice(Double p){
         price.setprice(p);
     }
+  
     
     public boolean isvalide(){
         if (number >0){

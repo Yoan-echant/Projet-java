@@ -14,6 +14,8 @@ import java.util.*;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
+import java.lang.*;
 
 
 public class WriterXml{
@@ -84,7 +86,7 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
 
 }
 
-    public void writesvg(int [] weigth, int [] height) { 
+    public void writesvg(int [] weigth, int [] height, int [] number) { 
         try{
             FileOutputStream file = null;
             String fichier= "decoupes.svg";
@@ -109,22 +111,35 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
             int y=0;
             int ligne=1;
             x=100;
+            
+            int r=0;
+            int g=0;
+            int b=0;
             for (int p=0;p<nbx; p++){
-                System.out.println(p);
-                
-                writer.writeStartElement("rect");
-                writer.writeAttribute("x",Integer.toString(x));
-                writer.writeAttribute("y",Integer.toString(ligne*200));
-                writer.writeAttribute("width",Integer.toString(weigth[p]));
-                writer.writeAttribute("height",Integer.toString(height[p]));
-                x=x+50+weigth[p]; // le 50 est là pour rajouter de la marge
-                if (x>1000){
-                    x=100;
-                    ligne++;
+                    int numberbis=number[p];
+                    Random ra = new Random();
+                    int n = ra.nextInt(1);
+                    r=Math.floor(n*255);
+                    g=Math.floor(n*255);
+                    b=Math.floor(n*255);
+                    System.out.println(numberbis);
+                    for (int k=0;k<numberbis; k++){
+                    
+                    
+                    writer.writeStartElement("rect");
+                    writer.writeAttribute("x",Integer.toString(x));
+                    writer.writeAttribute("y",Integer.toString(ligne*200));
+                    writer.writeAttribute("width",Integer.toString(weigth[p]));
+                    writer.writeAttribute("height",Integer.toString(height[p]));
+                  //  writer.writeAttribute("style","fill:rgb("+Integer.toString(r)+","+Integer.toString(g)+","+Integer.toString(b)+")");
+                    x=x+50+weigth[p]; // le 50 est là pour rajouter de la marge
+                    if (x>1000){
+                        x=100;
+                        ligne++;
+                    }
+                    writer.writeEndElement();
+                    writer.writeCharacters(System.getProperty("line.separator"));
                 }
-                writer.writeEndElement();
-                writer.writeCharacters(System.getProperty("line.separator"));
-               
             
 
             }
