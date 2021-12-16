@@ -9,6 +9,7 @@ public class Reader{
     public Reader(){
         ClientOrder clientorder = new ClientOrder();
         ReaderXml readerxml = new ReaderXml();
+        WriterXml writerxml = new WriterXml();
         this.clientorder = clientorder.initClientOrder() ;
         this.readerxml = readerxml.initReaderXml();
         this.writerxml = writerxml.initWriterXml();
@@ -55,7 +56,7 @@ public class Reader{
         return tab_fin;
     }
 
-    public void write( int[] id_client int[] planche,int[] id_fournisseur,int[] panneau,int[] x,int[] y){
+    public void write( int[] id_client,int[] planche,int[] id_fournisseur,int[] panneau,int[] x,int[] y){
         writerxml.writer_xml(id_client ,planche,id_fournisseur,panneau,x,y);
     }
 
@@ -87,5 +88,4 @@ public class Reader{
     public ClientOrder get_clientorder(){
         return this.clientorder;
     }
-
 }

@@ -48,32 +48,33 @@ public class Cut_algo extends Reader{
         int planche[];
         int x[];
         int y[];
-        // int id_fournisseur[];
-        // int panneau[]
+        int id_fournisseur[];
+        int panneau[];
 
         tab_clientfd=new int[taille];
         planche=new int[taille];
         x=new int[taille];
         y=new int[taille];
        
-      // id_fournisseur=new int[taille];
-      // planche=new int[taille];
+       id_fournisseur=new int[taille];
+       panneau=new int[taille];
 
     // il faut regarder le type pour savoir si on doit remplir id_fournisseur ou tab_client..
 
         
         for (int p=0;p<cut.size();p++){
 
+
             tab_clientfd[p]=reader.get_client_id(cut.get(p));
             planche[p]=reader.get_plank_id(cut.get(p));
-          //  id_fournisseur[p]=
-           // panneau[p]=
+            id_fournisseur[p]=reader.get_client_id(tabSupp[p]);
+            panneau[p]=reader.get_plank_id(tabSupp[p]);
             x[p]= reader.getx(cut.get(p));
             y[p]=reader.gety(cut.get(p));
 
         }
         // fonction inaccessible pour le moment; 
-        write(tab_clientfd, planche,id_fournisseur,panneau,x,y);
+        reader.write(tab_clientfd, planche,id_fournisseur,panneau,x,y);
     }
 
     private static int dec_number(ClientOrder clientorder, int entier){
