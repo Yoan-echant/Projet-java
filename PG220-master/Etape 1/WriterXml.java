@@ -84,7 +84,7 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
 
 }
 
-    public void writesvg(int [] weigth, int [] heigth) { 
+    public void writesvg(int [] weigth, int [] height) { 
         try{
             FileOutputStream file = null;
             String fichier= "decoupes.svg";
@@ -94,19 +94,42 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
 
         
             writer.writeStartElement("svg");
-            writer.writeAttribute("width",Integer.toString(2000));
-            writer.writeAttribute("height",Integer.toString(2000));
+            writer.writeAttribute("width",Integer.toString(1000));
+            writer.writeAttribute("height",Integer.toString(1000));
             writer.writeCharacters(System.getProperty("line.separator"));
             // ecriture fichier avec position, taille
 
             // test random element : 
-            writer.writeStartElement("rect");
-            writer.writeAttribute("x",Integer.toString(100));
-            writer.writeAttribute("y",Integer.toString(200));
-            writer.writeAttribute("width",Integer.toString(60));
-            writer.writeAttribute("heigth",Integer.toString(70));
-            writer.writeEndElement();
-            writer.writeEndElement();
+            
+            int position_initialex=100;
+            int position_initialey=100; 
+            int nbx=weigth.length;
+            int nby=height.length;
+            int x=0;
+            int y=0;
+            int ligne=1;
+            x=100;
+            for (int p=0;p<nbx; p++){
+                System.out.println(p);
+                
+                writer.writeStartElement("rect");
+                writer.writeAttribute("x",Integer.toString(x));
+                writer.writeAttribute("y",Integer.toString(ligne*200));
+                writer.writeAttribute("width",Integer.toString(weigth[p]));
+                writer.writeAttribute("height",Integer.toString(height[p]));
+                x=x+50+weigth[p]; // le 50 est là pour rajouter de la marge
+                if (x>1000){
+                    x=100;
+                    ligne++;
+                }
+                writer.writeEndElement();
+                writer.writeCharacters(System.getProperty("line.separator"));
+               
+            
+
+            }
+             writer.writeEndElement();
+                
 
         }
         catch(IOException exc) {
