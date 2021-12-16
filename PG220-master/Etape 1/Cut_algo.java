@@ -64,17 +64,16 @@ public class Cut_algo extends Reader{
         
         for (int p=0;p<cut.size();p++){
 
-            //probleme de static;
-            tab_clientfd[p]=get_client_id(cut.get(p));
-            planche[p]=get_plank_id(cut.get(p));
+            tab_clientfd[p]=reader.get_client_id(cut.get(p));
+            planche[p]=reader.get_plank_id(cut.get(p));
           //  id_fournisseur[p]=
            // panneau[p]=
-            x[p]= getx(cut.get(p));
-            y[p]=gety(cut.get(p));
+            x[p]= reader.getx(cut.get(p));
+            y[p]=reader.gety(cut.get(p));
 
         }
         // fonction inaccessible pour le moment; 
-        ecriture(tab_clientfd, planche,/*id_fournisseur,panneau,*/x,y);
+        write(tab_clientfd, planche,id_fournisseur,panneau,x,y);
     }
 
     private static int dec_number(ClientOrder clientorder, int entier){

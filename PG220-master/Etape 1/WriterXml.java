@@ -18,7 +18,15 @@ import java.util.ArrayList;
 
 public class WriterXml{
 
-public void ecriture(int [] client_id, /*int []planche, int [] id_fournisseur,*/ int []panneau, int []x, int [] y){
+    public WriterXml(){
+        
+    }
+
+    public WriterXml initWriterXml(){
+        return new WriterXml();
+    }
+
+public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,int []panneau, int []x, int [] y){
     try{
     FileOutputStream file = null;
     String fichier= "decoupes.xml";

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 public class Reader{
     private ClientOrder clientorder;
     private ReaderXml readerxml;
+    private WriterXml writerxml;
 
     public Reader(){
         ClientOrder clientorder = new ClientOrder();
         ReaderXml readerxml = new ReaderXml();
         this.clientorder = clientorder.initClientOrder() ;
         this.readerxml = readerxml.initReaderXml();
+        this.writerxml = writerxml.initWriterXml();
     }
 
     public ClientOrder createClientOrder(String date, int number,int type, Double price,int id_client,int idPlank,int length,int width){
@@ -53,6 +55,10 @@ public class Reader{
         return tab_fin;
     }
 
+    public void write( int[] id_client int[] planche,int[] id_fournisseur,int[] panneau,int[] x,int[] y){
+        writerxml.writer_xml(id_client ,planche,id_fournisseur,panneau,x,y);
+    }
+
     public int compare_size(ClientOrder ord1, ClientOrder ord2){
         return clientorder.compare_size(ord1,ord2);
     }
@@ -81,8 +87,5 @@ public class Reader{
     public ClientOrder get_clientorder(){
         return this.clientorder;
     }
-    public int get_type(ClientOrder ord){
-        return clientorder.get_type(ord1);
-           }
 
 }
