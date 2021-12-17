@@ -35,10 +35,10 @@ class Cut_algo extends Reader{
                     System.out.println("On a satisfait la commande de la planche " + reader.get_plank_id(tabOrder[i])+" du client "+reader.get_client_id(tabOrder[i]));
                     cut.add(tab);
 
-                    System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
-                    System.out.println("getnumber" +reader.get_clientorder().get_number(tabOrder[i]));
-                    dec_number(tabSupp[j],reader.get_clientorder().get_number(tabOrder[i]));
-                    System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
+                    /*System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
+                    System.out.println("getnumber" +reader.get_clientorder().get_number(tabOrder[i]));*/
+                    reader.dec_number(tabSupp[j],reader.get_clientorder().get_number(tabOrder[i]));
+                    //System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
                     /*for (int k=1; k<tab.length;k++){
                         tabSuppList.add(tab[k]);
                     }*/
@@ -94,7 +94,7 @@ class Cut_algo extends Reader{
 
     }
 
-    private static void dec_number(ClientOrder co, int n){
+    public void dec_number(ClientOrder co, int n){
         Reader reader = new Reader();
         reader.dec_number(co,n);
     }

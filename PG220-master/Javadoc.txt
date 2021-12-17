@@ -32,7 +32,7 @@ Package n°2 : [gestion][Algo]
 
 Ces 2 programmes permettent d'effectuer la lecture du fichier client et fournisseur. On stocke l'ensemble des informations lues dans des tableaux. On crée ensuite un tableau de ClientOrder (voir ci dessus pour plus d'explication sur cette classe)
 
-- WriterXml.java : [à renommer]
+- WriterXml.java 
 
 Cette classe permet d'écrire un fichier Xml ou un fichier svg selon la méthode appelée. Chaque méthode prend en argument des tableaux de variables contenant les champs utiles tels que les informations relatifs aux id des clients ou des id de fournissieurs, ou encore les dimensions de la nouvelle planche ainsi créee.. etc
 

@@ -70,8 +70,13 @@ public class ClientOrder extends Order{
         return getntype(ord);
     }
 
-    public void dec_number1(ClientOrder ord , int num){
-        decnumber(ord,num);
+    private void setnumber(ClientOrder ord, int num){
+        ord.number=num;
+    }
+
+
+    public void decnumber(ClientOrder ord, int num){
+        setnumber(ord,getnumber(ord)-num);
     }
 
 

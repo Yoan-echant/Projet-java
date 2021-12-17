@@ -1,6 +1,6 @@
 package order;
 class Order implements Validable{
-    private int number;
+    protected int number;
     private Date date; 
     private Price price;
     private int type;
@@ -32,14 +32,8 @@ class Order implements Validable{
     public void setnumber(int nb){
         this.number=nb;
     }
-    private setnumber(ClientOrder ord, int num){
-        ord.number=num;
-    }
 
 
-    public void decnumber(Order ord,int nb){
-        setnumber(ord,num);
-    }
 
     public void setdate(String date_order){
         date.setdate(date_order);

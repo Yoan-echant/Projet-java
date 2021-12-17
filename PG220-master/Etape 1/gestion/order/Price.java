@@ -45,7 +45,10 @@ class Price implements Validable{
         }
         if(this.price*100 - Math.floor(this.price * 100) !=0 ){
            return false; 
-        }   
+        }
+        if(this.price<0){
+            return false;
+        }
 
         return true;
     }
