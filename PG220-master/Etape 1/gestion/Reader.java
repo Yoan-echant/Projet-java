@@ -94,7 +94,7 @@ class Reader{
     }
 
     public void set_number(ClientOrder ord,int num){
-        clientorder.setnumber(ord,num);
+        clientorder.setnumber1(ord,num);
     }
 
     public ClientOrder get_clientorder(){

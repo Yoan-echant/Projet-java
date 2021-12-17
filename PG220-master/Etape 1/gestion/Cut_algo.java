@@ -36,6 +36,7 @@ class Cut_algo extends Reader{
                     cut.add(tab);
 
                     System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
+                    System.out.println("getnumber" +reader.get_clientorder().get_number(tabOrder[i]));
                     dec_number(tabSupp[j],reader.get_clientorder().get_number(tabOrder[i]));
                     System.out.println("Nombre de planches restants chez le fournisseur"+reader.get_clientorder().get_number(tabSupp[j]));
                     /*for (int k=1; k<tab.length;k++){

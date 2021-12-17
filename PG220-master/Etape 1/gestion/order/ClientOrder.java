@@ -70,7 +70,7 @@ public class ClientOrder extends Order{
         return getntype(ord);
     }
 
-    public void setnumber(ClientOrder ord , int num){
+    public void setnumber1(ClientOrder ord , int num){
         setnumber(ord,num);
     }
 
