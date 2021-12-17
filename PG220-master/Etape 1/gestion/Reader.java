@@ -93,7 +93,7 @@ class Reader{
         return(clientorder.get_plank_id(ord));
     }
 
-    public void det_number(ClientOrder ord,int num){
+    public void dec_number(ClientOrder ord,int num){
         clientorder.dec_number1(ord,num);
     }
 
