@@ -32,9 +32,13 @@ class Order implements Validable{
     public void setnumber(int nb){
         this.number=nb;
     }
+    private setnumber(ClientOrder ord, int num){
+        ord.number=num;
+    }
 
-    public void setnumber(Order ord,int nb){
-        ord.number=nb;
+
+    public void decnumber(Order ord,int nb){
+        setnumber(ord,num);
     }
 
     public void setdate(String date_order){

@@ -93,9 +93,9 @@ class Cut_algo extends Reader{
 
     }
 
-    private static void dec_number(ClientOrder clientorder, int entier){
+    private static void dec_number(ClientOrder co, int n){
         Reader reader = new Reader();
-        reader.get_clientorder().set_number(clientorder,reader.get_clientorder().get_number(clientorder)-entier);
+        reader.dec_number(co,n);
     }
 
     private ClientOrder cutplank(ClientOrder order, ClientOrder supplier){
