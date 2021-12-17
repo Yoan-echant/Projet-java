@@ -28,7 +28,7 @@ class WriterXml{
         return new WriterXml();
     }
 
-public void writer_xml(int [] client_id, int []plank, int [] id_supplier,int []pannel, int []x, int [] y){
+public void writer_xml(int [] client_id, int []pannel, int [] id_supplier,int []plank, int []x, int [] y){
     try{
     FileOutputStream file = null;
     String filedec= "decoupes.xml";
@@ -49,13 +49,13 @@ public void writer_xml(int [] client_id, int []plank, int [] id_supplier,int []p
         writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("client");
         writer.writeAttribute("id",Integer.toString(client_id[k]));
-        writer.writeAttribute("planche",Integer.toString(plank[k]));
+        writer.writeAttribute("panneau",Integer.toString(pannel[k]));
         writer.writeEndElement();
 
         writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("fournisseur");
         writer.writeAttribute("id",Integer.toString(id_supplier[k]));
-        writer.writeAttribute("panneau",Integer.toString(pannel[k]));
+        writer.writeAttribute("planche",Integer.toString(plank[k]));
         writer.writeEndElement();
 
         writer.writeCharacters(System.getProperty("line.separator"));

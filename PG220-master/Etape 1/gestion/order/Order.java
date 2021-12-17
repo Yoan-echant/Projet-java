@@ -33,6 +33,10 @@ class Order implements Validable{
         this.number=nb;
     }
 
+    public void setnumber(Order ord,int nb){
+        ord.number=nb;
+    }
+
     public void setdate(String date_order){
         date.setdate(date_order);
     }

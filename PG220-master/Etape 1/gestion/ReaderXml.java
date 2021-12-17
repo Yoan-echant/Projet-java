@@ -80,7 +80,7 @@ class ReaderXml{
                                             price = Double.parseDouble(reader.getAttributeValue(3));
                                         }
                                         catch(Exception e){
-                                            price = (double)0;
+                                            price = (double)(-1);
                                             System.out.println(" Le prix n'est pas un double");     
                                         }
                                          String affichage="";

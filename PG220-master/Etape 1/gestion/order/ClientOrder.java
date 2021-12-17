@@ -70,6 +70,10 @@ public class ClientOrder extends Order{
         return getntype(ord);
     }
 
+    public void setnumber(ClientOrder ord , int num){
+        setnumber(ord,num);
+    }
+
 
     public int get_client_id(ClientOrder ord){
         return client.getid(ord.client);
