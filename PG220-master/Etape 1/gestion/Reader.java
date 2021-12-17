@@ -60,8 +60,8 @@ class Reader{
         return tab_fin;
     }
 
-    public void write( int[] id_client,int[] planche,int[] id_fournisseur,int[] panneau,int[] x,int[] y){
-        writerxml.writer_xml(id_client ,planche,id_fournisseur,panneau,x,y);
+    public void write( int[] id_client,int[] plank,int[] id_supplier,int[] pannel,int[] x,int[] y){
+        writerxml.writer_xml(id_client ,plank,id_supplier,pannel,x,y);
     }
 
     public void write_svg(int [] weigth, int [] heigth, int [] number){
