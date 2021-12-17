@@ -93,8 +93,8 @@ class Reader{
         return(clientorder.get_plank_id(ord));
     }
 
-    public void set_number(ClientOrder ord,int num){
-        clientorder.setnumber1(ord,num);
+    public void dec_number(ClientOrder ord,int num){
+        clientorder.dec_number1(ord,num);
     }
 
     public ClientOrder get_clientorder(){
