@@ -3,6 +3,7 @@ package gestion;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.*;
+import order.ClientOrder;
 
 class Cut_algo extends Reader{
     
