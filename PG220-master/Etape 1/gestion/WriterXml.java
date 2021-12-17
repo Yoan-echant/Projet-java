@@ -28,11 +28,11 @@ class WriterXml{
         return new WriterXml();
     }
 
-public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,int []panneau, int []x, int [] y){
+public void writer_xml(int [] client_id, int []plank, int [] id_supplier,int []pannel, int []x, int [] y){
     try{
     FileOutputStream file = null;
-    String fichier= "decoupes.xml";
-    file = new FileOutputStream(fichier);
+    String filedec= "decoupes.xml";
+    file = new FileOutputStream(filedec);
     XMLOutputFactory xmlOutFact = XMLOutputFactory.newInstance();
     XMLStreamWriter writer = xmlOutFact.createXMLStreamWriter(file);
             
@@ -43,19 +43,19 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
     writer.writeCharacters(System.getProperty("line.separator"));
     writer.writeStartElement("decoupe");
             // insertion des elements importants :
-    int taille=planche.length;
+    int size=plank.length;
     int k;
-    for (k=0;k<taille;k++){
+    for (k=0;k<size;k++){
         writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("client");
         writer.writeAttribute("id",Integer.toString(client_id[k]));
-        writer.writeAttribute("planche",Integer.toString(planche[k]));
+        writer.writeAttribute("planche",Integer.toString(plank[k]));
         writer.writeEndElement();
 
         writer.writeCharacters(System.getProperty("line.separator"));
         writer.writeStartElement("fournisseur");
-        writer.writeAttribute("id",Integer.toString(id_fournisseur[k]));
-        writer.writeAttribute("panneau",Integer.toString(panneau[k]));
+        writer.writeAttribute("id",Integer.toString(id_supplier[k]));
+        writer.writeAttribute("panneau",Integer.toString(pannel[k]));
         writer.writeEndElement();
 
         writer.writeCharacters(System.getProperty("line.separator"));
@@ -82,15 +82,13 @@ public void writer_xml(int [] client_id, int []planche, int [] id_fournisseur,in
         }
        
 
-    
-
 }
 
     public void writesvg(int [] weigth, int [] height, int [] number) { 
         try{
             FileOutputStream file = null;
-            String fichier= "decoupes.svg";
-            file = new FileOutputStream(fichier);
+            String filedec= "decoupes.svg";
+            file = new FileOutputStream(filedec);
             XMLOutputFactory xmlOutFact = XMLOutputFactory.newInstance();
             XMLStreamWriter writer = xmlOutFact.createXMLStreamWriter(file);
 

@@ -1,12 +1,12 @@
 Javadoc :
 
 Il y a deux packages : 
-- un package contenant l'aspect algorithmique du projet 
-- un package qui construit les elements de notre projet 
+- un package gestion contenant l'aspect algorithmique du projet 
+- un package qui order construit les elements de notre projet 
 
-Vous pouvez consulter le graphique UML pour plus de clarté.
+Voir UML pour plus de clarté.
 
-Package n°1 : [mettre le nom] 
+Package n°1 : [order] 
 
 Nous avons implémenter differentes classes représentants différents caractéristiques parmi lesquelles on retrouve : 
 
@@ -26,7 +26,7 @@ Nous avons implémenter differentes classes représentants différents caractér
 
 
 
-Package n°2 : [mettre le nom][Algo]
+Package n°2 : [gestion][Algo]
 
 - Reader.java et ReaderXml.java : 
 
